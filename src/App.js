@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import PokemonInput from './components/pokemon-input';
+
+const getParam = () => {
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  const params = Object.fromEntries(urlSearchParams.entries());
+
+  return params["q"];
+};
+
 
 function App() {
+  const paramValue = getParam();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="app-body">
+       {paramValue ?  <div /> : <PokemonInput /> }
+       </div>
     </div>
   );
 }

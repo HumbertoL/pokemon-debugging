@@ -1,5 +1,31 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  background-color: #282c34;
+}
+
+.app-body {
+  color: black;
+  background-color: white;
+  width: 620px;
+  height: 500px;
+  border-radius: 30px;
+  border: 5px solid #FF453E;
+}
+
+.valueInputContainer {
+  display: flex;
+  height: 60%;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .App-logo {
@@ -14,7 +40,6 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

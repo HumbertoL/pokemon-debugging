@@ -21,12 +21,25 @@
 
 .valueInputContainer {
   display: flex;
-  height: 60%;
   flex-direction: column;
   justify-content: center;
+  margin-top: 32px;
   margin-left: 16px;
   margin-right: 16px;
 }
+
+.pokemonContainer {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 32px;
+  white-space: pre-line;
+}
+
 
 .App-logo {
   height: 40vmin;

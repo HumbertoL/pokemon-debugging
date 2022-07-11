@@ -1,8 +1,9 @@
 import { Button, TextField } from '@mui/material';
 import { useState } from "react";
 
-function PokemonInput() {
-  const [value, setValue] = useState("");
+function PokemonInput({ searchKey }) {
+  const [value, setValue] = useState(searchKey);
+
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -12,6 +13,12 @@ function PokemonInput() {
     window.location.search = `q=${value}`
   }
 
+   const handleKeyUp = (e) => {
+    if (e.key === 'Enter') {
+      handleClick()
+    }
+  };
+
   return (
     <div className="valueInputContainer">
       <TextField
@@ -20,6 +27,7 @@ function PokemonInput() {
         variant="outlined"
         value={value}
         onChange={handleChange}
+        onKeyUp={handleKeyUp}
       />
       <br />
       <Button className="valueButton" variant="contained" color="primary" onClick={handleClick}>

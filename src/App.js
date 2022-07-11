@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import ErrorState from './components/error-state';
-import PokemonInput from './components/pokemon-input';
-import PokemonSummary from './components/pokemon-summary';
+import ErrorState from './components/ErrorState';
+import PokemonInput from './components/PokemonInput';
+import PokemonDisplay from './components/PokemonDisplay';
 
 const getParam = () => {
   const urlSearchParams = new URLSearchParams(window.location.search);
@@ -28,15 +28,17 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <div className="app-body">
-          {hasError ? (
-            <ErrorState />
-          ) : (
-            <>
-              <PokemonInput searchKey={paramValue} />
-              <PokemonSummary searchKey={paramValue} />
-            </>
-          )}
+        <div className="borderContainer">
+          <div className="app-body">
+            {hasError ? (
+              <ErrorState />
+            ) : (
+              <>
+                <PokemonInput searchKey={paramValue} />
+                <PokemonDisplay searchKey={paramValue} />
+              </>
+            )}
+          </div>
         </div>
       </div>
     );

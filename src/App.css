@@ -16,7 +16,19 @@
   width: 620px;
   height: 500px;
   border-radius: 30px;
-  border: 5px solid #FF453E;
+  border: 1px solid #222224;
+}
+
+.borderContainer {
+  border-radius: 30px;
+  background-image: linear-gradient(180deg, #ee1515 50%, #f0f0f0 50%),
+    linear-gradient(-180deg, #ee1515 50%, #f0f0f0 50%);
+  width: 620px;
+  height: 500px;
+  padding: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .valueInputContainer {
@@ -29,7 +41,7 @@
 }
 
 .pokemonContainer {
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +52,6 @@
   white-space: pre-line;
 }
 
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -48,7 +59,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 3s linear;
   }
 }
 

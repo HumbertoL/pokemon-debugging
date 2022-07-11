@@ -31,7 +31,7 @@ function PokemonInput({ searchKey }) {
       />
       <br />
       <Button className="valueButton" variant="contained" color="primary" onClick={handleClick}>
-        Ok
+        Search
       </Button>
     </div>
   );

@@ -57,7 +57,7 @@ function PokemonSummary({ searchKey }) {
         </Grid>
         <Grid item xs={6}>
           {startCase(pokemonData.types[0].type.name)} /{' '}
-          {startCase(pokemonData.types[1]?.type.name)}
+          {startCase(pokemonData.types[1].type.name)}
         </Grid>
         <Grid item xs={6}>
           <Typography>Front:</Typography>

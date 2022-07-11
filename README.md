@@ -1,3 +1,9 @@
+# About
+
+This app was build using (PokeAPI)[https://pokeapi.co/docs/v2#info] and Create React App.
+
+The purpose of this app is to show various debugging examples.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,6 +1,6 @@
 # About
 
-This app was build using (PokeAPI)[https://pokeapi.co/docs/v2#info] and Create React App.
+This app was build using [PokeAPI](https://pokeapi.co/docs/v2#info) and Create React App.
 
 The purpose of this app is to show various debugging examples.
 

@@ -1,6 +1,20 @@
 import { Grid, Typography } from '@mui/material';
 import { startCase } from 'lodash';
 
+/**
+ *
+ * @param {array} stats
+ */
+const calculateBestStat = (stats) => {
+  let bestStat = stats[0];
+
+  for (let i = 1; i < stats.length; i++) {
+    if (stats[i] > bestStat.base_stat) bestStat = stats[i];
+  }
+
+  return startCase(bestStat.stat.name);
+};
+
 function PokemonSummary({ pokemon, species }) {
   return (
     <Grid container alignItems="center">
@@ -31,6 +45,12 @@ function PokemonSummary({ pokemon, species }) {
       </Grid>
       <Grid item xs={6}>
         <Typography>{species.capture_rate}</Typography>
+      </Grid>
+      <Grid item xs={6}>
+        <Typography>Best Stat:</Typography>
+      </Grid>
+      <Grid item xs={6}>
+        <Typography>{calculateBestStat(pokemon.stats)}</Typography>
       </Grid>
       <Grid item xs={6}>
         <Typography>Front:</Typography>

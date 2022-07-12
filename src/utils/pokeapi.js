@@ -11,7 +11,7 @@ export const getPokemonSpeciesByIdOrName = (key) => {
   // https://pokeapi.co/api/v2/species/{id or name}/
   return fetch(`${BASE_URL}/pokemon-species/${key}`)
     .then((response) => response.json())
-    .catch(() => Promise.resolve(null));
+    .catch(() => Promise.resolve({}));
 };
 
 export const getPokemonInfo = (key) => {

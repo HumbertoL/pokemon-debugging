@@ -1,7 +1,7 @@
 import { Grid, Typography } from '@mui/material';
 import { startCase } from 'lodash';
 
-function PokemonSummary({ pokemon }) {
+function PokemonSummary({ pokemon, species }) {
   return (
     <Grid container alignItems="center">
       <Grid item xs={6}>
@@ -14,14 +14,23 @@ function PokemonSummary({ pokemon }) {
         <Typography>Name:</Typography>
       </Grid>
       <Grid item xs={6}>
-        {startCase(pokemon.name)}
+        <Typography>{startCase(pokemon.name)}</Typography>
       </Grid>
+
       <Grid item xs={6}>
         <Typography>Types:</Typography>
       </Grid>
       <Grid item xs={6}>
-        {startCase(pokemon.types[0].type.name)} /{' '}
-        {startCase(pokemon.types[1].type.name)}
+        <Typography>
+          {startCase(pokemon.types[0].type.name)} /{' '}
+          {startCase(pokemon.types[1].type.name)}
+        </Typography>
+      </Grid>
+      <Grid item xs={6}>
+        <Typography>Catch Rate:</Typography>
+      </Grid>
+      <Grid item xs={6}>
+        <Typography>{species.capture_rate}</Typography>
       </Grid>
       <Grid item xs={6}>
         <Typography>Front:</Typography>

@@ -1,23 +1,26 @@
 import { Typography } from '@mui/material';
 import { useEffect, useState } from 'react';
-import { getPokemonByIdOrName } from '../utils/pokeapi';
+import { getPokemonInfo } from '../utils/pokeapi';
 import PokemonSummary from './PokemonSummary';
 
 import MissingNo from '../static/MissingNo.png';
 
 function PokemonDisplay({ searchKey }) {
   const [pokemonData, setPokemonData] = useState(null);
+  const [pokemonSpecies, setPokemonSpecies] = useState(null);
   const [isNotFound, setIsNotFound] = useState(false);
 
   useEffect(() => {
     if (searchKey && !pokemonData && !isNotFound) {
       // TODO: use react-query
-      getPokemonByIdOrName(searchKey).then((data) => {
-        if (data) {
-          setPokemonData(data);
+      getPokemonInfo(searchKey).then(([pokemon, species]) => {
+        if (pokemon) {
+          setPokemonData(pokemon);
+          setPokemonSpecies(species)
           setIsNotFound(false);
         } else {
           setPokemonData(null);
+          setPokemonSpecies(null);
           setIsNotFound(true);
         }
       });
@@ -25,7 +28,7 @@ function PokemonDisplay({ searchKey }) {
   }, [pokemonData, searchKey, isNotFound]);
 
   if (searchKey === 'missingno.') {
-    return <img src={MissingNo} className="App-logo"></img>;
+    return <img src={MissingNo} className="App-logo" />;
   }
 
   if (!pokemonData && !isNotFound) {
@@ -40,7 +43,7 @@ function PokemonDisplay({ searchKey }) {
           Pokemon not found, please try a different search
         </Typography>
       ) : (
-        <PokemonSummary pokemon={pokemonData} />
+        <PokemonSummary pokemon={pokemonData} species={pokemonSpecies} />
       )}
     </div>
   );

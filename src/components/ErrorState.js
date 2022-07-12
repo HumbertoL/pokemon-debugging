@@ -1,6 +1,6 @@
 function ErrorState({ searchKey }) {
   return <div>
-    Oh no! Something went wrong!
+    Oh no! Something went wrong! This was totally unplanned!
   </div>
 }
 

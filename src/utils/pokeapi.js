@@ -1,4 +1,4 @@
-const BASE_URL = 'https://pokeapi.co/api/v2';
+const BASE_URL = "https://pokeapi.co/api/v2";
 
 export const getPokemonByIdOrName = (key) => {
   // https://pokeapi.co/api/v2/pokemon/{id or name}/
@@ -14,7 +14,8 @@ export const getPokemonSpeciesByIdOrName = (key) => {
     .catch(() => Promise.resolve({}));
 };
 
-export const getPokemonInfo = (key) => {
+export const getPokemonInfo = (search) => {
+  const key = search.toLowerCase();
   return Promise.all([
     getPokemonByIdOrName(key),
     getPokemonSpeciesByIdOrName(key),
